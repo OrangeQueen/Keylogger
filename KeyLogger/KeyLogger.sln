@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyLogger.Messages", "KeyLogger.Messages\KeyLogger.Messages.csproj", "{03CD7097-B034-41F7-AAF1-D11BE3C703D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyLogger.Catcher", "KeyLogger.Catcher\KeyLogger.Catcher.csproj", "{E6012110-2CFF-48C9-86BB-C8F5446CD9A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyLogger.Network", "KeyLogger.Network\KeyLogger.Network.csproj", "{36B02915-EA5A-4516-A2B7-AC600C95D424}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyLogger.Client", "KeyLogger.Client\KeyLogger.Client.csproj", "{4EF082ED-F64F-45CB-BB71-413F6A674A36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyLogger.Display", "KeyLogger.Display\KeyLogger.Display.csproj", "{EEC73E9C-6487-40E6-BF59-C8C8504448B2}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://koschi.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = KeyLogger.Catcher\\KeyLogger.Catcher.csproj
+		SccProjectName1 = KeyLogger.Catcher
+		SccLocalPath1 = KeyLogger.Catcher
+		SccProjectUniqueName2 = KeyLogger.Messages\\KeyLogger.Messages.csproj
+		SccProjectName2 = KeyLogger.Messages
+		SccLocalPath2 = KeyLogger.Messages
+		SccProjectUniqueName3 = KeyLogger.Network\\KeyLogger.Network.csproj
+		SccProjectName3 = KeyLogger.Network
+		SccLocalPath3 = KeyLogger.Network
+		SccProjectUniqueName4 = KeyLogger.Client\\KeyLogger.Client.csproj
+		SccProjectName4 = KeyLogger.Client
+		SccLocalPath4 = KeyLogger.Client
+		SccProjectUniqueName5 = KeyLogger.Display\\KeyLogger.Display.csproj
+		SccProjectName5 = KeyLogger.Display
+		SccLocalPath5 = KeyLogger.Display
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03CD7097-B034-41F7-AAF1-D11BE3C703D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03CD7097-B034-41F7-AAF1-D11BE3C703D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03CD7097-B034-41F7-AAF1-D11BE3C703D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03CD7097-B034-41F7-AAF1-D11BE3C703D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6012110-2CFF-48C9-86BB-C8F5446CD9A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6012110-2CFF-48C9-86BB-C8F5446CD9A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6012110-2CFF-48C9-86BB-C8F5446CD9A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6012110-2CFF-48C9-86BB-C8F5446CD9A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36B02915-EA5A-4516-A2B7-AC600C95D424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36B02915-EA5A-4516-A2B7-AC600C95D424}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36B02915-EA5A-4516-A2B7-AC600C95D424}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36B02915-EA5A-4516-A2B7-AC600C95D424}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EF082ED-F64F-45CB-BB71-413F6A674A36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EF082ED-F64F-45CB-BB71-413F6A674A36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EF082ED-F64F-45CB-BB71-413F6A674A36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EF082ED-F64F-45CB-BB71-413F6A674A36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEC73E9C-6487-40E6-BF59-C8C8504448B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEC73E9C-6487-40E6-BF59-C8C8504448B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEC73E9C-6487-40E6-BF59-C8C8504448B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEC73E9C-6487-40E6-BF59-C8C8504448B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

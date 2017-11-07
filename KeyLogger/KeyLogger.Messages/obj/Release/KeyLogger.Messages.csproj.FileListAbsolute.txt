@@ -1,0 +1,8 @@
+C:\Users\Praktikanten_SS2014\Source\Workspaces\KeyLogger\KeyLogger\KeyLogger.Messages\bin\Release\KeyLogger.Messages.dll
+C:\Users\Praktikanten_SS2014\Source\Workspaces\KeyLogger\KeyLogger\KeyLogger.Messages\bin\Release\KeyLogger.Messages.pdb
+C:\Users\Praktikanten_SS2014\Source\Workspaces\KeyLogger\KeyLogger\KeyLogger.Messages\bin\Release\protobuf-net.dll
+C:\Users\Praktikanten_SS2014\Source\Workspaces\KeyLogger\KeyLogger\KeyLogger.Messages\bin\Release\protobuf-net.pdb
+C:\Users\Praktikanten_SS2014\Source\Workspaces\KeyLogger\KeyLogger\KeyLogger.Messages\bin\Release\protobuf-net.xml
+C:\Users\Praktikanten_SS2014\Source\Workspaces\KeyLogger\KeyLogger\KeyLogger.Messages\obj\Release\KeyLogger.Messages.dll
+C:\Users\Praktikanten_SS2014\Source\Workspaces\KeyLogger\KeyLogger\KeyLogger.Messages\obj\Release\KeyLogger.Messages.pdb
+C:\Users\Praktikanten_SS2014\Source\Workspaces\KeyLogger\KeyLogger\KeyLogger.Messages\obj\Release\KeyLogger.Messages.csprojResolveAssemblyReference.cache
