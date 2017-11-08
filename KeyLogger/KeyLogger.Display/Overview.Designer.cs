@@ -43,10 +43,12 @@
             this.metroTabControl = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage_Main = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage_Settings = new MetroFramework.Controls.MetroTabPage();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox_Port = new MetroFramework.Controls.MetroTextBox();
-            this.metroButton_ChangePort = new MetroFramework.Controls.MetroButton();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroButton_ChangePort = new MetroFramework.Controls.MetroButton();
+            this.metroTextBox_Port = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Clients)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             this.metroTabControl.SuspendLayout();
@@ -173,14 +175,25 @@
             this.metroTabPage_Settings.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage_Settings.VerticalScrollbarSize = 10;
             // 
-            // metroLabel1
+            // metroLabel2
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(4, 15);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(87, 19);
-            this.metroLabel1.TabIndex = 2;
-            this.metroLabel1.Text = "Network Port";
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(4, 67);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(470, 19);
+            this.metroLabel2.TabIndex = 5;
+            this.metroLabel2.Text = "Changing the network port will close all connections and restart the application." +
+    "";
+            // 
+            // metroButton_ChangePort
+            // 
+            this.metroButton_ChangePort.Location = new System.Drawing.Point(86, 37);
+            this.metroButton_ChangePort.Name = "metroButton_ChangePort";
+            this.metroButton_ChangePort.Size = new System.Drawing.Size(75, 23);
+            this.metroButton_ChangePort.TabIndex = 4;
+            this.metroButton_ChangePort.Text = "Change";
+            this.metroButton_ChangePort.UseSelectable = true;
+            this.metroButton_ChangePort.Click += new System.EventHandler(this.metroButton_ChangePort_Click);
             // 
             // metroTextBox_Port
             // 
@@ -195,31 +208,42 @@
             this.metroTextBox_Port.TabIndex = 3;
             this.metroTextBox_Port.UseSelectable = true;
             // 
-            // metroButton_ChangePort
+            // metroLabel1
             // 
-            this.metroButton_ChangePort.Location = new System.Drawing.Point(86, 37);
-            this.metroButton_ChangePort.Name = "metroButton_ChangePort";
-            this.metroButton_ChangePort.Size = new System.Drawing.Size(75, 23);
-            this.metroButton_ChangePort.TabIndex = 4;
-            this.metroButton_ChangePort.Text = "Change";
-            this.metroButton_ChangePort.UseSelectable = true;
-            this.metroButton_ChangePort.Click += new System.EventHandler(this.metroButton_ChangePort_Click);
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(4, 15);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(87, 19);
+            this.metroLabel1.TabIndex = 2;
+            this.metroLabel1.Text = "Network Port";
             // 
-            // metroLabel2
+            // button1
             // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(4, 67);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(470, 19);
-            this.metroLabel2.TabIndex = 5;
-            this.metroLabel2.Text = "Changing the network port will close all connections and restart the application." +
-    "";
+            this.button1.Location = new System.Drawing.Point(377, 31);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Capture";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Start_Capture);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(458, 31);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Replay";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Start_Replay);
             // 
             // Overview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(561, 333);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.metroTabControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -255,8 +279,8 @@
         private MetroFramework.Controls.MetroButton metroButton_ChangePort;
         private MetroFramework.Controls.MetroTextBox metroTextBox_Port;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-
-
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
 

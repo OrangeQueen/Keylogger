@@ -186,7 +186,9 @@
     <None Include="Resources\keyboard_german.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\KeyboardMapping.xml" />
+    <None Include="Resources\KeyboardMapping.xml">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MouseMapping.xml" />

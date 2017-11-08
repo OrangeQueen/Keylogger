@@ -11,6 +11,8 @@ using KeyLogger.Network.Events;
 using KeyLogger.Network.Status;
 using MetroFramework.Forms;
 using MetroMessageBox = MetroFramework.MetroMessageBox;
+using System.Diagnostics;
+using System.Net;
 
 namespace KeyLogger.Display
 {
@@ -66,8 +68,6 @@ namespace KeyLogger.Display
         {
             BeginInvoke((MethodInvoker) (() =>
             {
-                //textBox1.Text += e.IP.Address.ToString();
-
                 if (e.Message.GetType() == typeof (KeyboardInputMessage))
                 {
                     var message = (KeyboardInputMessage) e.Message;
@@ -343,6 +343,51 @@ namespace KeyLogger.Display
 
             MetroMessageBox.Show(this, "This is not a valid port number!", "Information", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
+        }
+
+        //TODO
+        // add button for this
+        private void Stop_Capture(object sender, EventArgs e)
+        {
+            foreach (Server server in _servers)
+                server.StopCapture();
+        }
+
+        private void Start_Capture(object sender, EventArgs e)
+        {
+            foreach (Server server in _servers)
+                server.StartCapture();
+        }
+
+        private void Start_Replay(object sender, EventArgs e)
+        {
+            // TODO:
+            // open file dialog (google4it)
+            // read file from returned path
+            // split file by Server.LineSep
+            // give list instead of _servers[0].Log
+            new Thread(Replay).Start(_servers[0].Log.ToList());
+        }
+
+        private void ProcessMessage(byte[] datamsg, IPEndPoint senderEndPoint)
+        {
+            var im = SerializeHelper.Deserialize<InputMessage>(datamsg);
+            InputEvent(this, new InputEventArgs { Message = im, Ip = senderEndPoint });
+        }
+
+        public void Replay(object data)
+        {
+            var log = (List<string>)data;
+            foreach (var msg in log)
+            {
+                string[] parts = msg.Split(Server.sep.ToCharArray());
+
+                Thread.Sleep(int.Parse(parts[0]));
+                ProcessMessage(
+                    Convert.FromBase64String(parts[1]),
+                    new IPEndPoint(0,0)
+                );
+            }
         }
     }
 }

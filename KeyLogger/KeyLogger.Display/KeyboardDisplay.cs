@@ -11,6 +11,8 @@ using KeyLogger.Messages;
 using KeyLogger.Messages.Events;
 using KeyLogger.Network.Status;
 using MetroFramework.Forms;
+using System;
+using System.Diagnostics;
 
 namespace KeyLogger.Display
 {
@@ -36,7 +38,6 @@ namespace KeyLogger.Display
         public void RedrawController(KeyboardInputMessage message)
         {
             _message = message;
-
             switch (_message.KeyboardEvent)
             {
                 case KeyboardEvent.KeyDown:
@@ -55,7 +56,6 @@ namespace KeyLogger.Display
             {
                 return;
             }
-
             if (_message.KeyboardEvent == KeyboardEvent.KeyDown)
             {
                 e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
