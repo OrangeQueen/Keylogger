@@ -13,6 +13,7 @@ using MetroFramework.Forms;
 using MetroMessageBox = MetroFramework.MetroMessageBox;
 using System.Diagnostics;
 using System.Net;
+using System.IO;
 
 namespace KeyLogger.Display
 {
@@ -345,8 +346,7 @@ namespace KeyLogger.Display
                 MessageBoxIcon.Information);
         }
 
-        //TODO
-        // add button for this
+
         private void Stop_Capture(object sender, EventArgs e)
         {
             foreach (Server server in _servers)
@@ -361,12 +361,26 @@ namespace KeyLogger.Display
 
         private void Start_Replay(object sender, EventArgs e)
         {
-            // TODO:
-            // open file dialog (google4it)
-            // read file from returned path
-            // split file by Server.LineSep
-            // give list instead of _servers[0].Log
-            new Thread(Replay).Start(_servers[0].Log.ToList());
+
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "Log Files|*.log";
+            openFileDialog1.Title = "Select a Log File";
+
+
+            string Log = "";
+            string[] parts = null;
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+
+                using (StreamReader sr = new StreamReader(openFileDialog1.OpenFile()))
+                {
+                    Log = sr.ReadToEnd();
+                    parts = Log.Split(Environment.NewLine.ToCharArray());
+                    parts = parts.Where(x => !string.IsNullOrEmpty(x)).ToArray();
+                }
+            }
+            
+            new Thread(Replay).Start(parts.ToList());
         }
 
         private void ProcessMessage(byte[] datamsg, IPEndPoint senderEndPoint)
@@ -385,7 +399,7 @@ namespace KeyLogger.Display
                 Thread.Sleep(int.Parse(parts[0]));
                 ProcessMessage(
                     Convert.FromBase64String(parts[1]),
-                    new IPEndPoint(0,0)
+                    new IPEndPoint(long.Parse(parts[2]), int.Parse(parts[3]))
                 );
             }
         }

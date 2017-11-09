@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ZR1ROw1JMPJa2xl5OMY57EuLE6nf9RvQy8tozLOBHpI=</dsig:DigestValue>
+        <dsig:DigestValue>gzUl+u/zHggMwD5dsaTiKPpau9B4JsARVuYXI2dneL0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iZVxafSYrxOs1ES0+f/Ar+ZYTiDyuFK47X+CDANOsDU=</dsig:DigestValue>
+        <dsig:DigestValue>sUc7eqsGqA06fjFIq+M67Ddf5nzhsG+ZdGuNoH+5vn4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -91,14 +91,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="KeyLogger.Network.dll" size="22016">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="KeyLogger.Network.dll" size="22528">
       <assemblyIdentity name="KeyLogger.Network" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>vtbx1KOrW3WGXdhIFBV7q/FKOJUA1DK7lKdEbn4iz2A=</dsig:DigestValue>
+        <dsig:DigestValue>a4rjlbwZyEgWuiXCKNSil9ovUQbJzCaloulHwF8KFI8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
